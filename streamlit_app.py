@@ -17,11 +17,11 @@ if st.button("Analizar entidades"):
     if user_input.strip():
         with st.spinner("Procesando..."):
             results = classifier(user_input)
-            st.subheader("Entidades identificadas:")
+            st.subheader("Entidades:")
             for entity in results:
-                st.write(f"- **Texto**: `{entity['word']}`")
-                st.write(f"  - **Etiqueta**: `{entity['entity']}`")
-                st.write(f"  - **Confianza**: `{entity['score']:.2f}`")
+                st.write(f"- Texto: {entity['word']}")
+                st.write(f"  - Etiqueta: {entity['entity']}")
+                st.write(f"  - Confianza: {entity['score']:.2f}")
                 st.write("---")
     else:
         st.warning("Por favor, introduce algún texto para analizar.")
